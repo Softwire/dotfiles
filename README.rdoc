@@ -1,0 +1,42 @@
+= Softwire Dot Files repos
+
+This is a dotfiles repository to manage changes to your config files.
+It is mostly applicable to unix stlye "dotfiles", e.g. .bashrc
+
+To use this, you will need to have Cygwin.
+See http://swiki.zoo.lan/display/training/Cygwin
+
+== How it works
+
+Any config files you want to be versioned will be "hardlinked" to the copies in this repository.
+
+For this to work, this repos must be in the same NTFS drive as the files themselves. This means that you must clone this repos to your C: drive, and install everything there.
+
+If you have dotfiles you want versioned on other drives, you could try working with multiple dotfiles clones.
+
+== Setup
+
+  git clone gitosis@git.zoo.lan:dotfiles ~/
+  cd ~/dotfiles
+  rake install
+
+You should probably work in a branch, so your customisations don't affect all of Softwire.
+
+  git checkout -b mybranchname
+
+Feel free to commit your changes to that branch.
+Push any changes you think all of Softwire should have to the 'master' branch.
+
+== Adding a new dotfile
+
+Hardlink it to the corresponding path in this repos:
+
+  ln /c/cygwin/cygwin.bat c/cygwin/cygwin.bat
+  ln ~/.bashrc home/.bashrc
+
+Then commit in git
+
+== Credits
+
+Initally set up by RTB
+Somewhat based on https://github.com/ryanb/dotfiles
