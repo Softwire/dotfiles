@@ -8,6 +8,13 @@ task :install do
     system "ln -s /cygdrive/c /c"
   end
 
+  # HOME should end with "/Documents", otherwise you
+  # haven't set up Cygwin in the way we expect. This may not
+  # work properly if so.
+  unless ENV['HOME'] =~ /Documents$/
+    raise "Expecting $HOME to end with 'Documents'. See http://swiki.zoo.lan/display/training/Cygwin"
+  end
+
   # we only link directories, e.g. "c", "home" -- all files in
   # the root of the repos are ignored
   Dir.glob('*') do |dir|
