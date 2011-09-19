@@ -1,0 +1,15 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	autocrlf = false
+	filemode = false
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  ugi = gui
