@@ -8,11 +8,12 @@ See http://swiki.zoo.lan/display/training/Cygwin
 
 == How it works
 
-Any config files you want to be versioned will be "hardlinked" to the copies in this repository.
+Any config files you want to be versioned will be "symlinked" to the copies in this repository.
 
-For this to work, this repos must be in the same NTFS drive as the files themselves. This means that you must clone this repos to your C: drive, and install everything there.
+Any files you want to be auto-symlinked should be put in directories here which mirror their location on your computer (e.g. home/.bash_profile).
 
-If you have dotfiles you want versioned on other drives, you could try working with multiple dotfiles clones.
+(Note that we must use symlinks rather than hardlinks, as git will break hardlinks when updating files.
+http://stackoverflow.com/questions/3729278/git-and-hard-links )
 
 == Setup
 
@@ -27,12 +28,14 @@ You should probably work in a branch, so your customisations don't affect all of
 Feel free to commit your changes to that branch.
 Push any changes you think all of Softwire should have to the 'master' branch.
 
+You should delete the cgywin.bat file in C:/cygwin and point all cygwin shortcuts to the cygwin.bat in here instead.
+
 == Adding a new dotfile
 
-Hardlink it to the corresponding path in this repos:
+Move it to the corresponding path in this repos, and re-run the symlink setup script
 
-  ln /c/cygwin/cygwin.bat c/cygwin/cygwin.bat
-  ln ~/.bashrc home/.bashrc
+  mv ~/.bashrc home/.bashrc
+  rake install
 
 Then commit in git
 
