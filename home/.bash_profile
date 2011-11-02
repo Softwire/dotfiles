@@ -163,7 +163,12 @@ alias s=start
 
 alias handleCount="handle -s | grep ^Total | sed 's/.*: //'"
 
-alias emacs="/c/emacs-23.2/bin/emacsclientw.exe -n"
+function emacs ()
+{
+    filename=`readlink -f "$1"`
+    wfilename=`cygpath -w "$filename"`
+    /c/emacs-23.2/bin/emacsclientw.exe -n "$wfilename"
+}
 alias e=emacs
 
 alias gerp=grep
