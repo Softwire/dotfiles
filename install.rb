@@ -1,20 +1,16 @@
-require 'rake'
-require 'erb'
+# we rely on /c being "C:"
+unless File.exist?('/c')
+  system "ln -s /cygdrive/c /c"
+end
 
-desc "install the managed files"
-task :install do
-  # we rely on /c being "C:"
-  unless File.exist?('/c')
-    system "ln -s /cygdrive/c /c"
-  end
+# HOME should end with "/Documents", otherwise you
+# haven't set up Cygwin in the way we expect. This may not
+# work properly if so.
+unless ENV['HOME'] =~ /Documents$/
+  raise "Expecting $HOME to end with 'Documents'. See http://swiki.zoo.lan/display/training/Cygwin"
+end
 
-  # HOME should end with "/Documents", otherwise you
-  # haven't set up Cygwin in the way we expect. This may not
-  # work properly if so.
-  unless ENV['HOME'] =~ /Documents$/
-    raise "Expecting $HOME to end with 'Documents'. See http://swiki.zoo.lan/display/training/Cygwin"
-  end
-
+def install
   # we only link directories, e.g. "c", "home" -- all files in
   # the root of the repos are ignored
   Dir.glob('*') do |dir|
@@ -28,7 +24,7 @@ task :install do
 
           real_file = "#{real_base}/#{file}"
 	  file = "#{Dir.pwd}/#{file}"
-          if File.exist?(real_file)
+        if File.exist?(real_file)
             if File.identical? file, real_file
               puts "already linked: #{file} <-> #{real_file}"
               next
@@ -80,3 +76,4 @@ def syscall cmd
   system cmd or raise "system call failed"
 end
 
+install()

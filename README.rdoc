@@ -19,7 +19,7 @@ http://stackoverflow.com/questions/3729278/git-and-hard-links )
 
   git clone gitosis@git.zoo.lan:dotfiles ~/
   cd ~/dotfiles
-  rake install
+  ruby install.rb
 
 You should probably work in a branch, so your customisations don't affect all of Softwire.
 
@@ -35,7 +35,7 @@ You should delete the cgywin.bat file in C:/cygwin and point all cygwin shortcut
 Move it to the corresponding path in this repos, and re-run the symlink setup script
 
   mv ~/.bashrc home/.bashrc
-  rake install
+  ruby install.rb
 
 Then commit in git
 
