@@ -83,9 +83,13 @@ function svnfiles() {
 }
 
 function svnuplockopen() {
-    # svn lock returns 0 on success or failure:
-    # have to use "grep ." to detect error messages on stderr
-    svn up $* && svn lock $* 2>&1 > /dev/null | grep . || cygstart $*
+    if [ $# -ne 1 ]; then
+	echo "svnuplockopen: expecting one argument"
+    else
+        # svn lock returns 0 on success or failure:
+        # have to use "grep ." to detect error messages on stderr
+	svn up "$1" && svn lock "$1" 2>&1 > /dev/null | grep . || cygstart "$1"
+    fi
 }
 
 # does an "svn mv $1 $2" if you've already done a "mv $1 $2"
@@ -108,7 +112,8 @@ function svninfoserver()
     echo "svninfoserver: wrong number of arguments"
     echo "svninfoserver: Usage: svninfoserver path"
   else
-    svn info `svn info $1 | grep ^URL | egrep -o '[^ ]+$' | tr -d [:space:]`
+    url=`svn info "$1" | grep ^URL | egrep -o '[^ ]+$' | tr -d [:space:]`
+    svn info "$url"
   fi
 }
 
