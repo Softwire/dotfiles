@@ -197,3 +197,6 @@ function man ()
 # cmds:
 
 # find . | grep \\.svn$ | xargs -IX echo X X | sed s/\.svn\$/_svn/ | xargs -IX echo mv X
+
+# http://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/
+stty lnext ^q stop undef start undef

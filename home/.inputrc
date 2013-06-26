@@ -65,3 +65,5 @@ set completion-ignore-case on
 "\e\C-h":  backward-kill-word
 
 "\C-.":    yank-last-arg
+# http://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/
+"\C-v":    paste-from-clipboard
