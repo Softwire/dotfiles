@@ -13,3 +13,7 @@
   df = diff
   lg = log -p
   ugi = gui
+[difftool "doc"]
+  cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-doc.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
+[difftool "xls"]
+  cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-xls.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
