@@ -200,3 +200,26 @@ function man ()
 
 # http://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/
 stty lnext ^q stop undef start undef
+
+# Add git style "less" wrappers to the following commands.
+# This means that they will auto-scroll if the output is too long.
+#
+# The "-F" opt means that less will not scroll if the output will
+# fit on the current screen.
+# The "-X" opt means not to clear the screen before and after the output.
+# It doesn't seem necessary on my cygwin, but it is useful on linux boxes.
+#
+# Less will notice if it is in a pipeline and revert to passthru.
+#
+# "command" means to run the command without using function lookups. It is
+# needed here to avoid an infinite loop.
+
+svn() {
+    command svn "$@" | less -FX
+}
+diff() {
+    command diff "$@" | less -FX
+}
+grep() {
+    command grep "$@" | less -FX
+}
