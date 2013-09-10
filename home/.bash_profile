@@ -215,7 +215,12 @@ stty lnext ^q stop undef start undef
 # needed here to avoid an infinite loop.
 
 svn() {
-    command svn "$@" | less -FX
+    if [ "$1" = "log" -o "$1" = "diff" ]
+    then
+        command svn "$@" | less -FX
+    else
+        command svn "$@"
+    fi
 }
 diff() {
     command diff "$@" | less -FX
