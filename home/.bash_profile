@@ -189,6 +189,14 @@ function man ()
     done
 }
 
+# Add xtitle for ssh sessions. Most remote servers will override the xtitle as soon as
+# you log in to something sensible like user@host (so this will have no effect) but
+# occasionally there will be a server that does not.
+function ssh()
+{
+    xtitle "ssh $@" && command ssh "$@"
+}
+
 #bash completion helpers
 
 # too slow :-( . ~/bin/bash_completion/bash_completion.sh
