@@ -225,14 +225,14 @@ stty lnext ^q stop undef start undef
 svn() {
     if [ "$1" = "log" -o "$1" = "diff" ]
     then
-        command svn "$@" | less -FX
+        command svn "$@" | less -FX ; test ${PIPESTATUS[0]} -eq 0
     else
         command svn "$@"
     fi
 }
 diff() {
-    command diff "$@" | less -FX
+    command diff "$@" | less -FX ; test ${PIPESTATUS[0]} -eq 0
 }
 grep() {
-    command grep "$@" | less -FX
+    command grep "$@" | less -FX ; test ${PIPESTATUS[0]} -eq 0
 }
