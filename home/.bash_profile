@@ -178,8 +178,9 @@ alias e=emacs
 
 alias gerp=grep
 
-export EDITOR=vi
+export EDITOR=nano
 export SVN_EDITOR="svn_editor.bat"
+export DISPLAY=:0.0
 
 function man ()
 {
