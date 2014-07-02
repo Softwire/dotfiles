@@ -120,6 +120,15 @@ function svninfoserver()
 ## GIT aliases and functions
 alias gti=git
 alias gs="git status"
+alias grh="git reset --hard"
+alias grhh="git reset --hard HEAD^"
+alias gcf="git clean -f"
+alias gcfd="git clean -fd"
+alias ggk="git gui & gitk --all &"
+alias gpr="git pull --rebase"
+alias gprh="git reset --hard && git pull --rebase"
+alias gprs="git stash && git pull --rebase && git stash pop"
+alias gaa="git commit -a --amend"
 
 ## TAN stuff (only works in root dir of TAN)
 
