@@ -4,7 +4,7 @@
 	branch = auto
 [core]
 	autocrlf = false
-	filemode = false
+	fileMode = false
 [alias]
   st = status
   ci = commit
