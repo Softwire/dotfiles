@@ -1,22 +1,22 @@
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 [core]
-	autocrlf = false
-	fileMode = false
+    autocrlf = false
+    fileMode = false
 [alias]
-  st = status
-  ci = commit
-  br = branch
-  co = checkout
-  df = diff
-  lg = log -p
-  ugi = gui
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    ugi = gui
 [difftool "doc"]
-  cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-doc.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
+    cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-doc.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
 [difftool "xls"]
-  cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-xls.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
+    cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-xls.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
 [user]
-	name = Jamie Humphries
-	email = jamie.humphries@softwire.com
+    name = Jamie Humphries
+    email = jamie.humphries@softwire.com
