@@ -13,6 +13,7 @@
     df = diff
     lg = log -p
     ugi = gui
+    unfetch = "!/usr/bin/sh -c \"git branch -r | awk -F/ '/ $1\\//{print $2}' | xargs -I {} git branch -r -D {}\""
 [difftool "doc"]
     cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-doc.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
 [difftool "xls"]
