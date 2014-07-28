@@ -13,7 +13,7 @@ local WHITE="\[\033[1;37m\]"
 local NO_COLOUR="\[\033[0m\]"
 case $TERM in
     xterm*|rxvt*)
-        TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+        TITLEBAR='\[\033]0;Cygwin - \u@\h:\w\007\]'
         ;;
     *)
         TITLEBAR=""
