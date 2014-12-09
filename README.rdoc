@@ -17,7 +17,7 @@ http://stackoverflow.com/questions/3729278/git-and-hard-links )
 
 == Setup
 
-  git clone https://github.com/Softwire/dotfiles.git ~/
+  git clone git@github.com:Softwire/dotfiles.git ~/
   cd ~/dotfiles
   ruby install.rb
 
