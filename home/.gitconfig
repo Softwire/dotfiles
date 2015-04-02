@@ -14,6 +14,7 @@
     lg = log -p
     ugi = gui
     unfetch = "!/usr/bin/sh -c \"git branch -r | awk -F/ '/ $1\\//{print $2}' | xargs -I {} git branch -r -D {}\""
+    clean-up = "!/usr/bin/sh -c \"git branch -r --merged $1/$2 | grep -v $2 | sed 's/$1\\///' | xargs -n 1 git push --delete $1 \""
 [difftool "doc"]
     cmd = "wscript.exe \"E:\\Work\\dotfiles\\tortoise-svn-diff-scripts\\diff-doc.js\" \"`cygpath -wa \"$LOCAL\"`\" \"`cygpath -wa \"$REMOTE\"`\""
 [difftool "xls"]
