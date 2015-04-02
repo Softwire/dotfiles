@@ -1,7 +1,7 @@
 export PATH="$PATH:~/bin"
 
-# start in E:\work
-cd /e/Work
+# start in Work folder
+cd /Work
 
 # export PS1="$"
 
