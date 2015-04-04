@@ -190,7 +190,7 @@ alias gerp=grep
 
 export EDITOR=nano
 export SVN_EDITOR="svn_editor.bat"
-export DISPLAY=:0.0
+export DISPLAY=:1.0
 
 function man ()
 {
